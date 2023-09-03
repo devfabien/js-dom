@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do</title>
+</head>
+
+<body>
+    <div
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh;">
+        <form >
+        <input type="text" id="myInput">
+        <button type="button" id="butto" style="background-color: cornflowerblue; padding: 5px;">Add</button>
+        </form>
+        <p>To do lists</p>
+        <ul id="todoList" style="color: black;">
+    
+        </ul>
+        <input type="checkbox" name="" id="">
+    </div>
+    <script>
+            
+            
+
+            var list=document.getElementById('todoList');
+            var btn=document.querySelector('button');
+            btn.addEventListener('click',function(){
+                var inputVal = document.getElementById("myInput").value;
+                const ll=document.createElement('li');
+                console.log(inputVal);
+                ll.textContent=inputVal;
+                list.append(ll)
+            const btr=document.createElement("button");
+            btr.setAttribute('id',"rmv")  
+            btr.textContent="remove"
+            list.append(btr) 
+            btr.addEventListener('click',function(){
+                ll.remove()
+                btr.remove()
+            }) 
+            
+            });
+            
+        
+    </script>
+</body>
+
+</html>
