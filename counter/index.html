@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display:flex; flex-direction: column; height: 100vh; justify-content: center; align-items: center;">
+
+        <p id="result"></p>
+        <div style="display: flex; gap:3px">
+            <button class="five">5s</button>
+            <button class="ten">10s</button>
+            <button class="fif">15s</button>
+        </div>
+
+    </div>
+    <script>
+        var seconds = 10;
+        let butns = document.querySelectorAll('button');
+        let dd = document.getElementById("result");
+
+        butns.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                const style = e.currentTarget.classList;
+                if (style.contains('five')) {
+                    return seconds = seconds + 5
+                } else if (style.contains('ten')) {
+                    return seconds = seconds + 10
+                } else {
+                    return seconds = seconds + 15
+                }
+            })
+        })
+        var stopWatch = setInterval(function () {
+            if (seconds <= 0) {
+                clearInterval(stopWatch);
+            }
+            dd.textContent = seconds;
+            seconds--;
+        }, 1000);
+
+    </script>
+</body>
+</html>
