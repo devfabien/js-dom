@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result" style="text-align: center;">
+
+    </div>
+    <script>
+        var seconds = +prompt();
+        var stopWatch = setInterval(function() { 
+            let min=(seconds/60).toFixed(0);
+            let sec= seconds%60;
+        if(seconds <0){
+            clearInterval(stopWatch);
+            return;
+        }
+        document.getElementById("result").innerHTML = `M: ${min}, S: ${sec}`;
+        seconds--;
+    }, 1000);
+    </script>
+</body>
+</html>
